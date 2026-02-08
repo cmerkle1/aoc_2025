@@ -1,3 +1,5 @@
+# Day 1 Part 2
+
 file_path = 'sample.txt'
 
 with open(file_path, 'r') as file:
