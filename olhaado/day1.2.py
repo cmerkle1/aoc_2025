@@ -14,32 +14,41 @@ for i in data:
     else:
         turns += int(i[1:])
     print(f"{turns} turns")
+
+    while turns != 0:
+        if turns < 0:
+            pos -= 1
+            if pos == 0:
+                zeroCount += 1
+            if pos == -1:
+                pos = 99
+            turns += 1
+
+        elif turns > 0:
+            pos += 1
+            if pos == 100:
+                pos = 0
+                zeroCount +=1
+            turns -= 1
+print(zeroCount)
+
+
+
+""" scrapped this method because I was missing some passes
     pos += turns
     if pos == 0:
         zeroCount += 1
         print("count increased")
-    """elif pos < 0:
-        if pos > -100:
-            zeroCount += 1
-        else:
-            zeroCount += int(pos/-100)
-    elif pos > 99:
-        zeroCount += int(pos/100)"""
     print(f"position {pos}")
     while pos < 0:
-        if startPos == 0:
+        if startPos == 0 and turns > -99:
             zeroCount += 0
         else:
             zeroCount += 1
         print("count increased")
         pos = 100 + pos
     while pos > 99:
-        if startPos == 0:
-            zeroCount += 0
-        else:
-            zeroCount += 1
+        zeroCount += 1
         print("count increased")
         pos = pos - 100
-    print(f"position {pos}")
-
-print(zeroCount)
+    print(f"final position {pos}")"""
